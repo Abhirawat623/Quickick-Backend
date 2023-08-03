@@ -12,7 +12,7 @@ app.get("/",(req,res)=>{
 });
 
 app.get("/quiz",(req,res)=>{
-      res.send(quizzes);
+      res.send(quizzes.data);
 })
 
 //for heroku process.env.Port needed
