@@ -8,6 +8,7 @@ const quizzes = {
         {
           id:uuid(),
           category: "Marvel",
+          imageUrl :"https://i.pinimg.com/originals/53/1f/58/531f58760ed5d1828d08b2c7e8652a44.jpg",
           description: "Let's Check your knowledge of Marvel",
           quiz:[
             {
@@ -65,6 +66,7 @@ const quizzes = {
             id:uuid(),
             category: "Dragon Ball",
             description: "Let's Check your knowledge of Dragon ball",
+            imageUrl :"https://i.pinimg.com/originals/cc/91/b3/cc91b3bad422a943b0f4848f9fa476ae.jpg",
             quiz:[
               {
                   id:uuid(),
@@ -119,6 +121,6 @@ const quizzes = {
         
 
     ]
-};
+}
 
-module.exports = quizzes;
+module.exports = quizzes
