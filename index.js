@@ -2,6 +2,8 @@ const express = require("express");
 
 //to connct BE and FE
 const cors = require("cors");
+
+const jwt = require("jsonwebtoken");
 //for db
 const quizRouter = require("./router/quiz.router");
 
