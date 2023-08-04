@@ -28,7 +28,7 @@ app.post("/auth/login",(req,res)=>{
 
 const {username, password} = req.body;
 // res.json({username,password,message:"got the users data"});
-const isUserVerified = userdata.users.atsome(user=>user.name ===username &&
+const isUserVerified = userdata.users.some(user=>user.name ===username &&
                                 user.password === password);
         if(isUserVerified){
             res.status(200).json({message:"user verified"})
