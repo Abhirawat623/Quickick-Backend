@@ -1,7 +1,7 @@
 const express = require("express");
 
 //for db
-const quizzes = require("./db/quizzes");
+const quizRouter = require("./router/quiz.router");
 
 const app = express();
 
@@ -11,9 +11,7 @@ app.get("/",(req,res)=>{
     res.send("Hello, Abhi here..123")
 });
 
-app.get("/quiz",(req,res)=>{
-      res.send(quizzes.data);
-})
+app.use("/quiz",quizRouter);
 
 //for heroku process.env.Port needed
 app.listen(process.env.PORT ||PORT,()=>{
