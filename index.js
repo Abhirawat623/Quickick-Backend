@@ -28,11 +28,11 @@ app.post("/auth/login",(req,res)=>{
 
 const {username, password} = req.body;
 // res.json({username,password,message:"got the users data"});
-const isUserVerified = userdata.users.some(user=>user.name ===username &&
+const isUserVerified = userdata.users.some(user=>user.username ===username &&
                                 user.password === password);
         if(isUserVerified){
             const token = jwt.sign({id : username}, process.env.SECRET_TOKEN)
-            res.status(200).json({message:"user verified"})
+            res.status(200).json({username, tokenmessage:"user verified"})
         }
         else{
             //.status
