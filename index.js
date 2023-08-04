@@ -31,6 +31,7 @@ const {username, password} = req.body;
 const isUserVerified = userdata.users.some(user=>user.name ===username &&
                                 user.password === password);
         if(isUserVerified){
+            const token = jwt.sign({id : username}, process.env.SECRET_TOKEN)
             res.status(200).json({message:"user verified"})
         }
         else{
