@@ -27,9 +27,18 @@ app.use("/quiz",quizRouter);
 app.post("/auth/login",(req,res)=>{
 
 const {username, password} = req.body;
-res.json({username,password,message:"got the users data"})
+res.json({username,password,message:"got the users data"});
+const isUserVerified = userdata.users.atsome(user=>user.name ===username &&
+                                user.password === password);
+        if(isUserVerified){
+            res.status(200).json({message:"user verified"})
+        }
+        else{
+            //.status
+           res.status(401).json({message: "Invalid Credentials"})
+        }
 
-})
+});
 
 
 
